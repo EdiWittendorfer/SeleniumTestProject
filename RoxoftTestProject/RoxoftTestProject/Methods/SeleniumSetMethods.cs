@@ -16,8 +16,7 @@ namespace SeleiumTestProject
                 PropertiesCollection.driver.FindElement(By.Id(element)).SendKeys(value);
             if (elementType == PropertyType.Name)
                 PropertiesCollection.driver.FindElement(By.Name(element)).SendKeys(value);
-        }
-        
+        }        
 
         //Click on button
         public static void Click(string element, PropertyType elementType)

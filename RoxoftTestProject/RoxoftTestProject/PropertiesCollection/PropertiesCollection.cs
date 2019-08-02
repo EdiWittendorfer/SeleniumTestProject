@@ -17,7 +17,6 @@ namespace SeleiumTestProject
         ClassName
     }
 
-
     class PropertiesCollection
     {
         //Setting up the driver

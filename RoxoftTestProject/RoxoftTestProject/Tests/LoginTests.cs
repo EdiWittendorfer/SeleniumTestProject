@@ -20,42 +20,19 @@ namespace RoxoftTestProject.Tests
 
             //Starting the driver and navigating the plusplaner web site
             PropertiesCollection.driver.Navigate().GoToUrl("http://www.plusplaner.com");
-
-            try
-            {
-                Console.WriteLine("Element " + SeleniumGetMethods.IsEnabled("Username", PropertyType.Name) + " is enabled and ");
-            }
-            catch
-            {
-                Console.WriteLine("Element doesn't exitst");
-            }
-
-            try
-            {
-                Console.WriteLine("Element " + SeleniumGetMethods.IsEnabled("Password", PropertyType.Name) + " is enabled");
-            }
-            catch
-            {
-                Console.WriteLine("Element doesn't exitst");
-            }
-
-            try
-            {
-                Console.WriteLine("Element " + SeleniumGetMethods.IsEnabled("action", PropertyType.Name) + " is enabled" + "\n");
-            }
-            catch
-            {
-                Console.WriteLine("Element doesn't exitst");
-            }
           
             //The feedback tells me if it is/isn't executed test via the Output link
-            Console.WriteLine("Opened link");
+            Console.WriteLine("Opened link \n");
         }
 
         //1.5.1 Test
         [Test]
         public void FirstTest()
-        {            
+        {
+            //Checking the state of TextBoxes and Button
+            SeleniumGetMethods.UserNameTextboxCheck("Username", PropertyType.Name);
+            SeleniumGetMethods.PasswordTextboxCheck("Password", PropertyType.Name);
+            SeleniumGetMethods.LoginButtonCheck("action", PropertyType.Name);
 
             //Click on button "Prijava"
             SeleniumSetMethods.Click("action", PropertyType.Name);
@@ -68,9 +45,13 @@ namespace RoxoftTestProject.Tests
         [Test]
         public void SecoundTest()
         {
+            //Checking the state of TextBoxes and Button
+            SeleniumGetMethods.UserNameTextboxCheck("Username", PropertyType.Name);
+            SeleniumGetMethods.PasswordTextboxCheck("Password", PropertyType.Name);
+            SeleniumGetMethods.LoginButtonCheck("action", PropertyType.Name);
 
             //Entering the correct Username
-            SeleniumSetMethods.EnterText("Username", "tester12", PropertyType.Name);
+            SeleniumSetMethods.EnterText("Username", "tester12", PropertyType.Name);                                 
 
             //Click on button "Prijava"
             SeleniumSetMethods.Click("action", PropertyType.Name);
@@ -84,6 +65,11 @@ namespace RoxoftTestProject.Tests
         [Test]
         public void ThirdTest()
         {
+            //Checking the state of TextBoxes and Button
+            SeleniumGetMethods.UserNameTextboxCheck("Username", PropertyType.Name);
+            SeleniumGetMethods.PasswordTextboxCheck("Password", PropertyType.Name);
+            SeleniumGetMethods.LoginButtonCheck("action", PropertyType.Name);
+
             //Entering the correct Password
             SeleniumSetMethods.EnterText("Password", "Password1!", PropertyType.Name);
 
@@ -98,6 +84,11 @@ namespace RoxoftTestProject.Tests
         [Test]
         public void ForthTest()
         {
+            //Checking the state of TextBoxes and Button
+            SeleniumGetMethods.UserNameTextboxCheck("Username", PropertyType.Name);
+            SeleniumGetMethods.PasswordTextboxCheck("Password", PropertyType.Name);
+            SeleniumGetMethods.LoginButtonCheck("action", PropertyType.Name);
+
             //Entering the correct Username
             SeleniumSetMethods.EnterText("Username", "tester12", PropertyType.Name);
 
@@ -116,6 +107,11 @@ namespace RoxoftTestProject.Tests
         [Test]
         public void FifthTest()
         {
+            //Checking the state of TextBoxes and Button
+            SeleniumGetMethods.UserNameTextboxCheck("Username", PropertyType.Name);
+            SeleniumGetMethods.PasswordTextboxCheck("Password", PropertyType.Name);
+            SeleniumGetMethods.LoginButtonCheck("action", PropertyType.Name);
+
             //Entering the correct Username
             SeleniumSetMethods.EnterText("Username", "tester12", PropertyType.Name);
 
