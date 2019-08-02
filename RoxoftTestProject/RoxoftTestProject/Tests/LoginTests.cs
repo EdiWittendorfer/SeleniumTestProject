@@ -1,0 +1,140 @@
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using SeleiumTestProject;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RoxoftTestProject.Tests
+{   
+    class LoginTests
+    {
+        [SetUp] //Starting the driver and opening the web site
+        public void Initialize()
+        {
+            //Calling the driver through "PropertiesCollection"
+            PropertiesCollection.driver = new ChromeDriver();
+
+            //Starting the driver and navigating the plusplaner web site
+            PropertiesCollection.driver.Navigate().GoToUrl("http://www.plusplaner.com");
+
+            try
+            {
+                Console.WriteLine("Element " + SeleniumGetMethods.IsEnabled("Username", PropertyType.Name) + " is enabled and ");
+            }
+            catch
+            {
+                Console.WriteLine("Element doesn't exitst");
+            }
+
+            try
+            {
+                Console.WriteLine("Element " + SeleniumGetMethods.IsEnabled("Password", PropertyType.Name) + " is enabled");
+            }
+            catch
+            {
+                Console.WriteLine("Element doesn't exitst");
+            }
+
+            try
+            {
+                Console.WriteLine("Element " + SeleniumGetMethods.IsEnabled("action", PropertyType.Name) + " is enabled" + "\n");
+            }
+            catch
+            {
+                Console.WriteLine("Element doesn't exitst");
+            }
+          
+            //The feedback tells me if it is/isn't executed test via the Output link
+            Console.WriteLine("Opened link");
+        }
+
+        //1.5.1 Test
+        [Test]
+        public void FirstTest()
+        {            
+
+            //Click on button "Prijava"
+            SeleniumSetMethods.Click("action", PropertyType.Name);
+
+            //Getting alert message from the website
+            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName));
+        }
+
+        //1.5.2 Test
+        [Test]
+        public void SecoundTest()
+        {
+
+            //Entering the correct Username
+            SeleniumSetMethods.EnterText("Username", "tester12", PropertyType.Name);
+
+            //Click on button "Prijava"
+            SeleniumSetMethods.Click("action", PropertyType.Name);
+
+            //Getting alert message from the website
+            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName));
+
+        }
+
+        //1.5.3 Test
+        [Test]
+        public void ThirdTest()
+        {
+            //Entering the correct Password
+            SeleniumSetMethods.EnterText("Password", "Password1!", PropertyType.Name);
+
+            //Click on button "Prijava"
+            SeleniumSetMethods.Click("action", PropertyType.Name);
+
+            //Getting alert message from the website
+            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName));
+        }
+
+        //1.5.4 Test
+        [Test]
+        public void ForthTest()
+        {
+            //Entering the correct Username
+            SeleniumSetMethods.EnterText("Username", "tester12", PropertyType.Name);
+
+            //Entering the invalid Password
+            SeleniumSetMethods.EnterText("Password", "Password1", PropertyType.Name);
+
+            //Click on button "Prijava"
+            SeleniumSetMethods.Click("action", PropertyType.Name);
+            
+            //Getting alert message from the website
+            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName));
+
+        }
+
+        //1.5.5 Test
+        [Test]
+        public void FifthTest()
+        {
+            //Entering the correct Username
+            SeleniumSetMethods.EnterText("Username", "tester12", PropertyType.Name);
+
+            //Entering the correct Password
+            SeleniumSetMethods.EnterText("Password", "Password1!", PropertyType.Name);
+
+            //Click on button "Prijava"
+            SeleniumSetMethods.Click("action", PropertyType.Name);
+
+        }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            //Closing the driver
+            PropertiesCollection.driver.Close();
+
+            //The feedback tells me if it is/isn't executed test via the Output link
+            Console.WriteLine("Close the browser");
+        }
+    }
+}
