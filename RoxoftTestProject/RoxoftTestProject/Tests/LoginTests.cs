@@ -38,7 +38,7 @@ namespace RoxoftTestProject.Tests
             SeleniumSetMethods.Click("action", PropertyType.Name);
 
             //Getting alert message from the website
-            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName));
+            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName) + "\n");
         }
 
         //1.5.2 Test
@@ -57,7 +57,7 @@ namespace RoxoftTestProject.Tests
             SeleniumSetMethods.Click("action", PropertyType.Name);
 
             //Getting alert message from the website
-            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName));
+            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName) + "\n");
 
         }
 
@@ -77,7 +77,7 @@ namespace RoxoftTestProject.Tests
             SeleniumSetMethods.Click("action", PropertyType.Name);
 
             //Getting alert message from the website
-            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName));
+            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName) + "\n");
         }
 
         //1.5.4 Test
@@ -99,7 +99,7 @@ namespace RoxoftTestProject.Tests
             SeleniumSetMethods.Click("action", PropertyType.Name);
             
             //Getting alert message from the website
-            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName));
+            Console.WriteLine("Alert message: " + SeleniumGetMethods.GetText("/html/body/div[1]/div/div/div/div/div/div/div/div", PropertyType.CssName) + "\n");
 
         }
 

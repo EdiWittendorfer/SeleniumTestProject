@@ -56,11 +56,11 @@ namespace SeleiumTestProject
             bool PasswordTxtDisplayed = PropertiesCollection.driver.FindElement(By.Name(element)).Displayed;
             if (PasswordTxtDisplayed == true)
             {
-                Console.WriteLine("Username field is displayed");
+                Console.WriteLine("Password field is displayed");
                 bool PasswordTxtEnabled = PropertiesCollection.driver.FindElement(By.Name(element)).Enabled;
                 if (PasswordTxtEnabled == true)
                 {
-                    Console.WriteLine("Username field is enabled");
+                    Console.WriteLine("Password field is enabled");
                     string PasswordTxtValue = PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("value");
                     if (string.IsNullOrEmpty(PasswordTxtValue))
                     {
